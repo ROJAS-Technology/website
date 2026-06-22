@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Project</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="project.css" rel="stylesheet" type="text/css"/>
+        
+        <style>
+            /* --- AJUSTES DE OPTIMIZACIÓN ESTRUCTURAL HÍBRIDA --- */
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Bloque de la calculadora con el formato de fuente original */
+            .contenedor-calculadora {
+                padding: 15px 30px; 
+                text-align: left;
+                box-sizing: border-box;
+            }
+
+            /* Estilos para los botones e inputs para que no desentonen */
+            .contenedor-calculadora input {
+                font-size: 24px;
+                padding: 5px;
+                font-family: "Times New Roman", serif;
+            }
+
+            .contenedor-calculadora button {
+                font-size: 24px;
+                font-family: "Times New Roman", serif;
+                padding: 10px 20px;
+                background-color: #3d0c0c;
+                color: white;
+                border: 2px solid white;
+                cursor: pointer;
+                font-weight: bold;
+                margin-top: 15px;
+            }
+
+            .contenedor-calculadora button:hover {
+                background-color: #C30;
+            }
+
+            /* 📱 ADAPTACIÓN AUTOMÁTICA EXCLUSIVA PARA CELULARES */
+            @media (max-width: 768px) {
+                .contenedor-calculadora {
+                    padding: 15px;
+                }
+                .contenedor-calculadora input,
+                .contenedor-calculadora button {
+                    font-size: 18px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+         <div class="capa1">
+              
+              <!-- Cintillo de animación CSS infinito y continuo -->
+              <div class="cintillo-contenedor">
+                   <div class="dinamico"> 
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                       <!-- Bloque duplicado de respaldo para garantizar continuidad absoluta sin huecos vacíos -->
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                   </div>
+              </div>
+
+              <!-- Menú de navegación principal interactivo conectado -->
+              <div class="menu">
+                  <ul>
+                      <li><a href="index.html">Introduction</a></li>
+                      <li><a href="project.html">Project</a></li>
+                      <li><a href="journal.html">Journal</a></li>          
+                      <li><a href="factory.html">Factory 4.0</a></li>  
+                      <li><a href="epicenter.html">EpicenterHub</a></li>  
+                  </ul>             
+              </div>
+     
+              <!-- Contenedor elástico para los dos Logotipos y la Onda de Energía -->
+              <div class="logos-container">
+                  <img src="UNTAC.jpg" class="untac-redimensionado" alt="Logo UNTAC"/>
+                  
+                  <div class="onda-contenedor">
+                      <svg viewBox="0 0 600 100" preserveAspectRatio="none">
+                          <path d="M 0 50 Q 25 5, 50 50 T 100 50 T 150 50 T 200 50 T 250 50 T 300 50 T 350 50 T 400 50 T 450 50 T 500 50 T 550 50 T 600 50" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2.5"/>
+                          <path class="energia-flujo" d="M 0 50 Q 25 5, 50 50 T 100 50 T 150 50 T 200 50 T 250 50 T 300 50 T 350 50 T 400 50 T 450 50 T 500 50 T 550 50 T 600 50" fill="none" stroke="#ff9900" stroke-width="1.8"/>
+                      </svg>
+                  </div>
+
+                  <img src="fii2.jpg" class="fii2-redimensionado" alt="Logo FII"/>
+              </div>
+
+              <br> 
+              <h2>IoT</h2>
+              <br>
+               
+              <!-- Contenedor de la calculadora con formato de fuente original -->
+              <section class="contenedor-calculadora">
+                    <font face="Times New Roman" size="4" color="blue">
+                        <label for="nivel">Nivel&nbsp;Sonoro&nbsp;(dBA):</label>
+                        <input type="number" id="nivel" autofocus/> 
+                        <br>
+                        <button onclick="calcularLeq()">Calcular Leq</button>
+                    </font>
+              </section>      
+            
+              <br><br>
+              <form></form>  
+              <br> 
+
+         </div> <!-- Fin capa1 -->
+
+         <!-- ENLACE AL ARCHIVO JAVASCRIPT CON LA LÓGICA DE INTERACTIVIDAD -->
+
+         <script src="script.js"></script>
+
+    </body>
+</html>

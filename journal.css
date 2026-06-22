@@ -1,0 +1,374 @@
+body {
+    background: linear-gradient(to bottom, aqua, white);
+    margin: 0;
+    padding: 0;
+}
+
+.capa1 {
+    width: 95%;
+    margin: auto;
+    color: white;
+    padding: 10px;
+    background: #00ff00;
+    border: 3px solid red;
+    margin-top: 30px;
+    font-size: x-large;
+    box-sizing: border-box;
+}
+
+/* 👈 CORREGIDO: Estructura base para el cintillo de la UNI */
+.cintillo-contenedor {
+    background-color: #832a21;
+    overflow: hidden;         /* Recorta el texto sobrante de los lados */
+    width: 100%;
+    white-space: nowrap;      /* Fuerza a que todo el texto se mantenga en una sola línea */
+    display: flex;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+/* 👈 CORREGIDO: Lógica de traslación matemática fluida para evitar huecos en blanco */
+.dinamico {
+     display: inline-block;
+     font-size: 52px;
+     font-weight: bold;
+     color: white;
+     padding-bottom: 0px;
+     text-align: center;
+     animation: correrTexto 25s linear infinite; /* Controla la velocidad total del recorrido */
+}
+
+.dinamico span {
+    display: inline-block;
+}
+
+/* 👈 NUEVO CAMBIO AÑADIDO: Animación cíclica para que cuando un bloque termine de pasar, el otro ya esté en pantalla */
+@keyframes correrTexto {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0); /* Se desplaza exactamente la mitad para un ciclo perfecto */
+    }
+}
+
+/* --- ANIMACIONES DE LOS ESCUDOS --- */
+@keyframes mover1 {
+    0% { transform: translateX(0px); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(0px); }
+}
+
+@keyframes mover2 {
+    0% { transform: translateX(20px); }
+    50% { transform: translateX(0px); }
+    100% { transform: translateX(20px); }
+}
+
+/* --- NUEVA CABECERA ELÁSTICA PARA LOGOS (PC y Celular) --- */
+
+.logos-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;           
+    width: 100%;
+    padding: 20px 40px;            
+    box-sizing: border-box;
+    margin-top: 35px;
+}
+
+.untac-redimensionado {
+    animation: mover1 2s infinite;
+    display: inline-block;
+    font-weight: bold;
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
+}
+
+.fii2-redimensionado {
+    animation: mover2 2s infinite;
+    display: inline-block;
+    font-weight: bold;
+    width: 220px;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
+}
+
+.onda-contenedor {
+    flex-grow: 1;                 
+    height: 180px;                
+    margin: 0 30px;               
+    display: flex;
+    align-items: center;
+}
+
+.onda-contenedor svg {
+    width: 100%;
+    height: 100%;
+}
+
+.energia-flujo {
+    stroke-dasharray: 50 120;     
+    /*animation: correrEnergia 3.5s linear infinite;*/
+    /* 👈 CORREGIDO: Se agregaron dos animaciones en paralelo: 'correrEnergia' (para avanzar) y 'palpitarFoco' (para encender/opacar) */
+    animation: correrEnergia 3.5s linear infinite, palpitarFoco 2.5s ease-in-out infinite;
+ 
+    /*filter: drop-shadow(0px 0px 8px #ff3300);*/
+    filter: drop-shadow(0px 0px 15px #ff9900);
+ 
+    /* 👈 NUEVO CAMBIO AÑADIDO: Evita que el grosor de la línea se deforme o se vuelva grueso al encogerse en celulares */
+    /*vector-effect: non-scaling-stroke;*/
+
+
+}
+
+@keyframes correrEnergia {
+    0% {
+        stroke-dashoffset: 340;   
+    }
+    100% {
+        stroke-dashoffset: 0;     
+    }
+}
+
+
+
+/* 👈 NUEVA ANIMACIÓN AÑADIDA: Controla el efecto de foco que se enciende y se apaga de forma infinitamente suave */
+@keyframes palpitarFoco {
+    0% {
+        opacity: 0.2;  /* Totalmente atenuado / casi apagado */
+        filter: drop-shadow(0px 0px 2px #ff9900);
+    }
+    50% {
+        opacity: 1.0;  /* Encendido al máximo brillo */
+        filter: drop-shadow(0px 0px 10px #ff9900);
+    }
+    100% {
+        opacity: 0.2;  /* Regresa a estar opacado */
+        filter: drop-shadow(0px 0px 2px #ff9900);
+    }
+}
+
+
+
+
+/* --- MENÚ DE NAVEGACIÓN AZUL --- */
+.menu {
+     background-color: #000599;
+     padding: 0px 0;
+     position: sticky;
+     top: 0;
+     z-index: 999;
+}
+
+.menu ul {
+     margin: 0;
+     padding: 0;
+     list-style: none;
+     text-align: center;
+}
+
+.menu ul li {
+     display: inline-block;
+}
+
+.menu ul li a {
+     display: block;
+     padding: 10px;
+     color: #CC0;
+     text-decoration: none;
+     font-weight: bold;
+     font-size: 32px;
+}
+
+.menu ul li a:hover {
+     background: #C30;
+     color: #FFF;
+}
+
+.texto-mision-vision font {
+    font-size: 26px !important;
+}
+
+.bloque-perfil-autor font {
+    font-size: 28px !important;
+}
+
+
+/* --- CONTENEDOR DE LA FOTO DEL AUTOR (ZOOM) --- */
+
+.imagen-zoom {
+      margin: 20px auto 40px auto !important;
+      width: 320px !important;
+      height: 280px !important;
+      overflow: hidden !important;
+      position: relative !important;
+      display: block !important;
+      transform: translateZ(0) !important;
+      isolation: isolate !important;
+      z-index: 1 !important;
+}
+
+.imagen-zoom img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;     
+      display: block !important;
+      transition: transform 0.3s ease-out !important; 
+      transform-origin: bottom center !important;
+}
+
+.imagen-zoom:hover img {
+      transform: scale(1.15) !important;
+}
+
+h2 {
+   background-color: darkgreen; 
+   color: white;
+   text-align: left;
+   padding: 5px;
+   font-size: 42px;
+   margin-bottom: 0px;
+}
+
+h3 {
+    display: inline-block;           
+    background-color: darkgreen;     
+    color: white;                    
+    font-size: 28px;                 
+    text-align: left;
+    margin-left: 30px;               
+    padding: 5px 15px;               
+    margin-top: 15px;                
+    margin-bottom: 5px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+header li {
+    font-size: 160%;
+}
+
+label {
+    width: 100px;
+    display: inline-block;
+    margin: 50px;
+}
+
+/* ======================================================= */
+/* 📱 AJUSTES AUTOMÁTICOS SÓLO PARA PANTALLAS DE CELULARES  */
+/* ======================================================= */
+@media (max-width: 768px) {
+    .capa1 {
+        width: 100%;
+        margin-top: 10px;
+        font-size: large;
+    }
+    
+    /* 👈 CORREGIDO: Tamaño adaptado para el nuevo cintillo en celulares */
+    .dinamico {
+        font-size: 32px !important;                        /* UNIVERSIDAD NACIONAL DE INGENIERIA*/
+        animation: correrTexto 15s linear infinite;    /* Un poco más rápido en celular debido al ancho menor */
+    }
+
+    .logos-container {
+        padding: 15px 20px;
+    }
+
+    .untac-redimensionado {
+        width: 80px !important; 
+    }
+
+    .fii2-redimensionado {
+        width: 140px !important; 
+    }
+
+    .onda-contenedor {
+        /*display: none;*/
+
+        display: flex;
+        height: 110px;         /* Altura más reducida para adaptarse al espacio móvil */
+        margin: 0 10px;        /* Márgenes laterales elásticos más cortos */
+
+
+    }
+
+    .menu ul li a {
+        font-size: 25px !important;               /*Organization, IoT, Journal,Facotory,epienterHub*/
+        padding: 8px !important;
+    }
+
+    .imagen-zoom {
+        margin: 30px auto !important;
+        width: 260px !important;
+        height: 210px !important;
+        overflow: hidden !important;
+        isolation: isolate !important;
+        z-index: 1 !important;
+    }
+
+    h2 {
+        font-size: 30px !important;         /*Sub TITULO TECHNOLOGIES*/
+    }
+
+    h3 {
+        font-size: 22px;              
+        margin-left: 15px;           
+        padding: 4px 10px;
+    }
+
+    header li {
+        font-size: 110%;
+    }
+
+    .texto-mision-vision font {
+        font-size: 18px !important;
+    }
+
+    .bloque-perfil-autor font {
+        font-size: 18px !important;
+    }
+}
+
+
+/* ======================================================= */
+/* 🎯 SOLUCIÓN VISOR DE PAPERS EN JOURNAL.CSS              */
+/* ======================================================= */
+
+/* Centra el título principal "PAPER" */
+.capa1 > h2 {
+    text-align: center !important;
+}
+
+/* Centra los títulos de los enlaces de las listas */
+nav2 o1 li {
+    text-align: center !important;
+    list-style-position: inside !important; /* Mantiene la viñeta centrada con el texto */
+    margin-bottom: 25px !important;
+}
+
+/* Centra y abre verticalmente hacia abajo los visores de PDF */
+nav2 o1 iframe,
+nav2 o1 embed {
+    display: block !important;
+    margin: 0 auto !important;         /* Truco de márgenes para centrar elementos */
+    width: 65% !important;             /* Ancho ideal para la visualización */
+    height: 600px !important;          /* 👈 Abre el visor hacia abajo para que no se vea aplastado */
+    margin-bottom: 90px !important;    /* 👈 Deja espacio de separación abajo con el siguiente elemento */
+    border: 2px solid darkgreen !important; /* Opcional: Borde estético a juego con los títulos */
+}
+
+/* Ajuste responsivo automático para celulares */
+@media (max-width: 768px) {
+    nav2 o1 iframe,
+    nav2 o1 embed {
+        width: 95% !important;           /* Toma casi todo el ancho en pantallas pequeñas */
+        height: 400px !important;        /* Altura adaptada para móviles */
+        margin-bottom: 50px !important;
+    }
+}
+
+
