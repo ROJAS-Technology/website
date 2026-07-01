@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- CONFIGURACIÓN DE TARJETA GRANDE EXACTA -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="THE EPICENTER SAC." />
+        <meta name="twitter:description" content="Investigación y desarrollo de tecnologías en la Industria 4.0." />
+        <meta name="twitter:image" content="https://github.io" />
+
+        <title>Organization</title>
+
+        <style>
+html {
+    overflow-y: scroll;
+}
+
+body {
+    background: linear-gradient(to bottom, aqua, white);
+    margin: 0;
+    padding: 0;
+}
+
+.capa1 {
+    width: 95%;
+    margin: auto;
+    color: white;
+    padding: 10px;
+    background: #00ff00;
+    border: 3px solid red;
+    margin-top: 30px;
+    font-size: x-large;
+    box-sizing: border-box;
+}
+
+/* Estructura base para el cintillo de la UNI */
+.cintillo-contenedor {
+    background-color: #832a21;
+    overflow: hidden;         
+    width: 100%;
+    white-space: nowrap;      
+    display: flex;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+/* Lógica de traslación matemática fluida */
+.dinamico {
+     display: inline-block;
+     font-size: 52px;
+     font-weight: bold;
+     color: white;
+     padding-bottom: 0px;
+     text-align: center;
+     animation: correrTexto 25s linear infinite; 
+}
+
+.dinamico span {
+    display: inline-block;
+}
+
+@keyframes correrTexto {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-50%, 0, 0); 
+    }
+}
+
+/* ANIMACIONES DE LOS ESCUDOS */
+@keyframes mover1 {
+    0% { transform: translateX(0px); }
+    50% { transform: translateX(20px); }
+    100% { transform: translateX(0px); }
+}
+
+@keyframes mover2 {
+    0% { transform: translateX(20px); }
+    50% { transform: translateX(0px); }
+    100% { transform: translateX(20px); }
+}
+
+
+/*uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu*/
+
+/* --- CABECERA ELÁSTICA PARA LOGOS (PC y Celular) --- */
+.logos-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;           
+    width: 100%;
+    padding: 20px 40px;            
+    box-sizing: border-box;
+    margin-top: 35px;
+}
+
+.untac-redimensionado {
+    animation: mover1 2s infinite;
+    display: inline-block;
+    font-weight: bold;
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
+}
+
+.fii2-redimensionado {
+    animation: mover2 2s infinite;
+    display: inline-block;
+    font-weight: bold;
+    width: 220px;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
+}
+
+.onda-contenedor {
+    flex-grow: 1;                 
+    height: 180px;                
+    margin: 0 30px;               
+    display: flex;
+    align-items: center;
+}
+
+.onda-contenedor svg {
+    width: 100%;
+    height: 100%;
+}
+
+.energia-flujo {
+    stroke-dasharray: 50 120;     
+    animation: correrEnergia 3.5s linear infinite, palpitarFoco 2.5s ease-in-out infinite;
+    filter: drop-shadow(0px 0px 15px #ff9900);
+}
+
+@keyframes correrEnergia {
+    0% {
+        stroke-dashoffset: 340;   
+    }
+    100% {
+        stroke-dashoffset: 0;     
+    }
+}
+
+@keyframes palpitarFoco {
+    0% {
+        opacity: 0.2;  
+        filter: drop-shadow(0px 0px 2px #ff9900);
+    }
+    50% {
+        opacity: 1.0;  
+        filter: drop-shadow(0px 0px 10px #ff9900);
+    }
+    100% {
+        opacity: 0.2;  
+        filter: drop-shadow(0px 0px 2px #ff9900);
+    }
+}
+
+/* --- MENÚ DE NAVEGACIÓN AZUL --- */
+.menu {
+     background-color: #000599;
+     padding: 0px 0;
+     position: sticky;
+     top: 0;
+     z-index: 999;
+}
+
+.menu ul {
+     margin: 0;
+     padding: 0;
+     list-style: none;
+     text-align: center;
+}
+
+.menu ul li {
+     display: inline-block;
+}
+
+.menu ul li a {
+     display: block;
+     padding: 10px;
+     color: #CC0;
+     text-decoration: none;
+     font-weight: bold;
+     font-size: 32px;
+}
+
+.menu ul li a:hover {
+     background: #C30;
+     color: #FFF;
+}
+
+.texto-mision-vision font {
+    font-size: 26px !important;
+}
+
+.bloque-perfil-autor font {
+    font-size: 28px !important;
+    text-align: center !important; 
+    display: block !important;     
+}
+
+/* --- CONTENEDOR DE LA FOTO DEL AUTOR (ZOOM) --- */
+.imagen-zoom {
+      margin: 20px auto 40px auto !important;
+      width: 320px !important;
+      height: 280px !important;
+      overflow: hidden !important;
+      position: relative !important;
+      display: block !important;
+      transform: translateZ(0) !important;
+      isolation: isolate !important;
+      z-index: 1 !important;
+}
+
+.imagen-zoom img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: contain !important;     
+      display: block !important;
+      transition: transform 0.3s ease-out !important; 
+      transform-origin: bottom center !important;
+}
+
+.imagen-zoom:hover img {
+      transform: scale(1.15) !important;
+}
+
+h2 {
+   background-color: darkgreen; 
+   color: white;
+   text-align: left;
+   padding: 5px;
+   font-size: 42px;
+   margin-bottom: 0px;
+}
+
+h3 {
+    display: inline-block;           
+    background-color: darkgreen;     
+    color: white;                    
+    font-size: 28px;                 
+    text-align: left;
+    margin-left: 30px;               
+    padding: 5px 15px;               
+    margin-top: 15px;                
+    margin-bottom: 5px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+header li {
+    font-size: 160%;
+}
+
+label {
+    width: 100px;
+    display: inline-block;
+    margin: 50px;
+}
+
+/*uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu*/
+
+/* ======================================================= */
+/* 📱 AJUSTES AUTOMÁTICOS SÓLO PARA PANTALLAS DE CELULARES  */
+/* ======================================================= */
+@media (max-width: 768px) {
+    .capa1 {
+        width: 100%;
+        margin-top: 10px;
+        font-size: large;
+    }
+    
+    .dinamico {
+        font-size: 32px !important;                 
+        animation: correrTexto 15s linear infinite; 
+    }
+
+    .logos-container {
+        padding: 15px 20px;
+    }
+
+    .untac-redimensionado {
+        width: 80px !important; 
+    }
+
+    .fii2-redimensionado {
+        width: 140px !important; 
+    }
+
+    .onda-contenedor {
+        display: flex;
+        height: 110px;         
+        margin: 0 10px;        
+    }
+
+    .menu ul li a {
+        font-size: 25px !important;
+        padding: 8px !important;
+    }
+
+    .imagen-zoom {
+        margin: 20px auto !important;   
+        width: 160px !important;        
+        height: 140px !important;       
+        overflow: hidden !important;    
+        isolation: isolate !important;
+        z-index: 1 !important;
+    }
+
+    h2 {
+        font-size: 30px !important;     
+    }
+
+    h3 {
+        font-size: 20px !important;              
+        margin-left: 15px !important;           
+        padding: 4px 10px;
+    }
+
+    header li {
+        font-size: 110%;
+    }
+
+    .texto-mision-vision font {
+        font-size: 18px !important;
+    }
+
+    .bloque-perfil-autor font {
+        font-size: 14px !important;    
+        text-align: center !important; 
+        display: block !important;                
+    }
+
+    .bloque-perfil-autor font strong {
+        font-size: 16px !important;            
+    }
+}
+        </style>
+    </head>
+
+
+    <body>
+         <div class="capa1">
+              
+              <!-- Cintillo de la UNI con sistema de animación CSS infinito -->
+              <div class="cintillo-contenedor">
+                   <div class="dinamico"> 
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                       <span>UNIVERSIDAD NACIONAL DE INGENIERIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                   </div>
+              </div>
+
+              <!-- Menú de navegación principal -->
+              <div class="menu">
+                  <ul>
+                      <li><a href="index.html">Organization</a></li>
+                      <li><a href="project.html">Project</a></li>
+                      <li><a href="journal.html">Journal</a></li>          
+                      <li><a href="factory.html">Factory 4.0</a></li>  
+                      <li><a href="epicenter.html">EpicenterHub</a></li>  
+                  </ul>             
+              </div>
+     
+              <!-- Contenedor elástico para los dos Logotipos y la Onda de Energía -->
+              <div class="logos-container">
+                  <img src="UNTAC.jpg" class="untac-redimensionado" alt="Logo UNTAC"/>
+                  
+                  <div class="onda-contenedor">
+                      <svg viewBox="0 0 600 100" preserveAspectRatio="none">
+                          <path d="M 0 50 Q 25 5, 50 50 T 100 50 T 150 50 T 200 50 T 250 50 T 300 50 T 350 50 T 400 50 T 450 50 T 500 50 T 550 50 T 600 50" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2.5"/>
+                          <path class="energia-flujo" d="M 0 50 Q 25 5, 50 50 T 100 50 T 150 50 T 200 50 T 250 50 T 300 50 T 350 50 T 400 50 T 450 50 T 500 50 T 550 50 T 600 50" fill="none" stroke="#ff9900" stroke-width="1.8"/>
+                      </svg>
+                  </div>
+
+                  <img src="fii2.jpg" class="fii2-redimensionado" alt="Logo FII"/>
+              </div>
+
+              <br> 
+              <h2>VISION & MISION</h2>
+              <br>
+              <h3>THE EPICENTER SAC.</h3>
+              <br>
+  
+              <!-- Contenido informativo con formato de fuente original -->
+              <section class="texto-mision-vision">
+                    <font face="Times New Roman" size="4" color="blue">
+                        <p style="padding-left: 20px; text-indent: 0px; margin-bottom: 0;">
+                            Es una organización PRIVADA que, en colaboración con sus socios estratégicos, 
+                            investiga y desarrolla tecnologías en el área de la Industria 4.0.<br><br>
+                        </p>
+
+                        <ul style="list-style-type: disc; padding-left: 20px; margin-top: 15px; margin-bottom: 0;">
+                            <li style="margin-bottom: 15px; text-align: justify;"><strong>Nuestra Misión:</strong> Vincular propuestas tecnológicas de vanguardia en los campos de la fisicoquímica de materiales avanzados, la ingeniería de procesos e isótopos, así como en los sectores de minería, metalurgia, geología, biología, aeronáutica, naval, hidrocarburos y petroquímica.</li>
+                            <li style="text-align: justify;"><strong>Nuestra Visión:</strong> Posicionar al Perú como un país líder y exportador de maquinaria, bienes de capital y equipos de alta precisión para el mundo globalizado.</li>
+                        </ul>
+
+                        <br>
+                        <strong style="color: black;">PILARES DE ACCIÓN TECNOLÓGICA</strong>
+                        <ul style="list-style-type: disc; padding-left: 20px; margin-top: 10px; margin-bottom: 15px;">
+                            <li style="margin-bottom: 15px; text-align: justify;"><strong>Línea de Isótopos y Procesos Nucleares:</strong> Modelado, simulación y development de maquinaria para la separación de isótopos y fluidodinámica supersónica (centrifugación avanzada).</li>
+                            <li style="margin-bottom: 15px; text-align: justify;"><strong>Línea de Materiales Avanzados:</strong> Investigación y testeo de compuestos de ultra alta resistencia (fibras de carbono avanzadas, acero maraging y aleaciones de alta resistencia).</li>
+                            <li style="text-align: justify;"><strong>Línea de Industria 4.0:</strong> Integración de gemelos digitales, automatización, inteligencia artificial y sistemas de control adaptados a la minería y metalurgia.</li>
+                        </ul>
+
+                        <br>
+                        <strong style="color: black;">OBJETIVOS ESTRATÉGICOS</strong>
+                        <ul style="list-style-type: disc; padding-left: 20px; margin-top: 10px; margin-bottom: 0;">
+                            <li style="margin-bottom: 15px; text-align: justify;"><strong>Exportación Global:</strong> Diseñar y fabricar maquinaria pesada de alta precisión con ingeniería y sello peruano.</li>
+                            <li style="margin-bottom: 15px; text-align: justify;"><strong>Propiedad Intelectual:</strong> Registrar patentes internacionales de las innovaciones generadas en nuestros laboratorios y simulaciones.</li>
+                            <li style="text-align: justify;"><strong>Alianzas Globales:</strong> Consolidar acuerdos de transferencia tecnológica con las industrias estratégicas globales.</li>
+                        </ul>
+                    </font>
+              </section>      
+              
+              <br><br>
+
+              <!-- Información de perfil del autor -->
+              <section class="bloque-perfil-autor">
+                    <font face="Times New Roman" size="4" color="black">
+                        <strong>EDITO LUIS ROJAS LINARES</strong><br>
+                        Presidente ejecutivo & Gerente general
+                    </font>
+              </section>
+
+              <!-- Fotografía de perfil con Zoom contenido -->
+              <div class="imagen-zoom">
+                  <img src="foto_01.jpg" alt="Dr. Edito Luis Rojas Linares"/>
+              </div>
+            
+              <br><br>
+              <form></form>  
+              <br> 
+         </div>                             
+
+         <!-- Script interactivo original restaurado con declaración de importancia estricta -->
+         <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const epicenterHeading = document.querySelector("h3");
+
+    if (epicenterHeading) {
+        let estado = true;
+
+        setInterval(function() {
+            if (estado) {
+                epicenterHeading.style.setProperty("background-color", "darkgreen", "important");
+                epicenterHeading.style.setProperty("color", "#ffffff", "important");
+            } else {
+                epicenterHeading.style.setProperty("background-color", "#000599", "important");
+                epicenterHeading.style.setProperty("color", "#ffffff", "important");
+            }
+            estado = !estado;
+        }, 750);
+    }
+});
+         </script>
+    </body>
+</html>
+
